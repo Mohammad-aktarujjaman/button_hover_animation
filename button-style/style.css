@@ -1,0 +1,149 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #222;
+    flex-direction: column;
+    gap: 50px;
+}
+.button{
+    background: #111;
+    height: 70px;
+    width: 150px;
+    border-radius: 50px;
+    box-shadow: inset 0 0 10px #fff6,
+    inset -2px -2px 10px #fff6;
+    padding: 2px;
+    position: relative;
+}
+.button span{
+    height: 66px;
+    width: 66px;
+    border-radius: 50%;
+    inset: 2px;
+    background: #222;
+    display: inline-block;
+    cursor: pointer;
+    transform: translateX(0%);
+    transition: .6s;
+}
+
+.button .transform{
+    transform: translateX(121%);
+}
+.button::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    bottom: 23px;
+    left: 100px;
+    position: relative;
+    background: #fff4;
+    display: inline-block;
+    box-shadow: 0 0 10px #fff;
+}
+.after::after{
+    content: "";
+    background: #0fa;
+    box-shadow: 0 0 10px #0fa;
+}
+/* read more button */
+.button1{
+    background: rgba(255, 255, 255, .07);
+    height: 70px;
+    width: 150px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: .5s;
+    z-index: 2;
+}
+.button1 a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    color: #fff;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    transition: .3s;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    overflow: hidden;
+    -moz-backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    z-index: 1;
+}
+.button1 a::before{
+    content: "";
+    height: 100%;
+    width: 50%;
+    position: absolute;
+    background: linear-gradient(to left, #fff2 , transparent);
+    top: 0px;
+    left: 0;
+    z-index: -1;
+    transform: skew(45deg) translateX(0);
+    transition: .5s;
+}
+.button1:hover a::before {
+    transform: skew(45deg) translateX(200%);
+}
+.button1:hover a{
+    letter-spacing: 2px;
+}
+.button1::after{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 40px;
+    border-radius: 4px;
+    z-index: -1;
+    background: #0fa;
+    bottom: -5px;
+    transition: .4s;
+    transition-delay: .5s;
+}
+.button1:hover::after{
+    height: 50%;
+    width: 80%;
+    bottom: 0;
+    border-radius: 30px;
+}
+.button1::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 40px;
+    border-radius: 4px;
+    z-index: -1;
+    background: #0fa;
+    top: -5px;
+    transition: .4s;
+    transition-delay: .5s;
+}
+.button1:hover::before{
+    height: 50%;
+    width: 80%;
+    top: 0;
+    border-radius: 30px;
+}
+.button1:nth-child(2)::after , .button1:nth-child(2)::before{
+    background: #e84393;
+}
+.button1:nth-child(3)::after , .button1:nth-child(3)::before{
+    background: #6c5ce7;
+}
